@@ -11,7 +11,7 @@ from beancount.ingest import importer
 
 
 FIELDS = (
-    'Buchung',
+    'Buchungstag',
     'Wertstellung',
     'Umsatzart',
     'Buchungstext',
