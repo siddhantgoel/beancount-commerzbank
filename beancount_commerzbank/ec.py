@@ -41,7 +41,7 @@ def _format_iban(iban):
 
 class ECImporter(importer.ImporterProtocol):
     def __init__(self, iban, account, currency='EUR',
-                 numeric_locale='de_DE.UTF-8', file_encoding='utf-8'):
+                 numeric_locale='de_DE.UTF-8', file_encoding='utf-8-sig'):
         self.iban = _format_iban(iban)
         self.account = account
         self.numeric_locale = numeric_locale
