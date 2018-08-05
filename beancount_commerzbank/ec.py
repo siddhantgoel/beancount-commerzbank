@@ -57,8 +57,7 @@ class ECImporter(importer.ImporterProtocol):
             if not line:
                 return False
 
-            return line == ';'.join(
-                '"{}"'.format(field) for field in FIELDS) + ';'
+            return line == ';'.join(FIELDS)
 
     def extract(self, file_):
         entries = []

@@ -37,7 +37,7 @@ class ECImporterTestCase(TestCase):
 
         with open(self.filename, 'wb') as fd:
             fd.write(_format('''
-                {header};
+                {header}
             ''', dict(header=HEADER)))
 
         with open(self.filename) as fd:
@@ -59,7 +59,7 @@ class ECImporterTestCase(TestCase):
 
         with open(self.filename, 'wb') as fd:
             fd.write(_format('''
-                {header};
+                {header}
             ''', dict(header=HEADER)))
 
         with open(self.filename) as fd:
@@ -70,7 +70,7 @@ class ECImporterTestCase(TestCase):
 
         with open(self.filename, 'wb') as fd:
             fd.write(_format('''
-                {header};
+                {header}
 
                 15.07.2018;15.07.2018;Lastschrift;"PayPal Europe S.a.r.l.";-13,47;EUR;000000000;00000000;DE00000000000000000000;Unkategorisierte Ausgaben
                 15.07.2018;15.07.2018;Gutschrift;"MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED Kundenreferenz: XXXX0000000000000000000000000000000";50,00;EUR;111111111;11111111;DE11111111111111111111;Unkategorisierte Ausgaben
