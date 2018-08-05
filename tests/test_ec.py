@@ -13,10 +13,10 @@ def path_for_temp_file(name):
 
 
 def _format(string, kwargs):
-    return dedent(string).format(**kwargs).lstrip().encode('utf-8')
+    return dedent(string).format(**kwargs).lstrip().encode('utf-8-sig')
 
 
-HEADER = ';'.join('"{}"'.format(field) for field in FIELDS)
+HEADER = ';'.join(FIELDS)
 
 
 class ECImporterTestCase(TestCase):
