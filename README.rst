@@ -1,5 +1,5 @@
 Beancount Commerzbank Importer
-=============================
+==============================
 
 :code:`beancount-commerzbank` provides an Importer for converting CSV exports of
 Commerzbank_ account summaries to the Beancount_ format.
