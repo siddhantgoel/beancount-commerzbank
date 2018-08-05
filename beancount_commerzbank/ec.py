@@ -54,7 +54,11 @@ class ECImporter(importer.ImporterProtocol):
         with open(file_.name, encoding=self.file_encoding) as fd:
             line = fd.readline().strip()
 
-            return line and line == ';'.join(FIELDS)
+            if not line:
+                return False
+
+            return line == ';'.join(
+                '"{}"'.format(field) for field in FIELDS) + ';'
 
     def extract(self, file_):
         entries = []
