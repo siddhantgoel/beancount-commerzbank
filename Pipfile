@@ -1,15 +1,23 @@
 [[source]]
+
 url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[packages]
-beancount-commerzbank = {editable = true, path = "."}
 
 [dev-packages]
-"flake8" = "==3.5.0"
-pytest = "==3.6.3"
+
+flake8 = "==3.5.0"
+pytest = "==3.8.0"
 twine = "==1.11.0"
 
+
 [requires]
+
 python_version = "3.6"
+
+
+[packages.beancount-commerzbank]
+
+editable = true
+path = "."
