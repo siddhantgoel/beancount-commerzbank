@@ -14,7 +14,7 @@ twine = "==1.12.1"
 
 [requires]
 
-python_version = "3.6"
+python_version = "3.7"
 
 
 [packages.beancount-commerzbank]
