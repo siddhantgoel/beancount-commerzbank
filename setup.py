@@ -54,7 +54,7 @@ class PublishCommand(Command):
 
 setup(
     name='beancount-commerzbank',
-    version='0.1.1',
+    version='0.1.2',
     description='Beancount Importer for Commerzbank CSV exports',
     long_description=long_description,
     author='Siddhant Goel',
@@ -77,6 +77,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3 :: Only',
     ]
 )
