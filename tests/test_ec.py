@@ -73,7 +73,7 @@ class ECImporterTestCase(TestCase):
                 {header}
 
                 15.07.2018;15.07.2018;Lastschrift;"PayPal Europe S.a.r.l.";-13,47;EUR;000000000;00000000;DE00000000000000000000;Unkategorisierte Ausgaben
-                15.07.2018;15.07.2018;Gutschrift;"MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED Kundenreferenz: XXXX0000000000000000000000000000000";50,00;EUR;111111111;11111111;DE11111111111111111111;Unkategorisierte Ausgaben
+                15.08.2018;15.08.2018;Gutschrift;"MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED Kundenreferenz: XXXX0000000000000000000000000000000";50,00;EUR;111111111;11111111;DE11111111111111111111;Unkategorisierte Ausgaben
             ''', dict(header=HEADER)))  # NOQA
 
         with open(self.filename) as fd:
@@ -82,12 +82,12 @@ class ECImporterTestCase(TestCase):
             self.assertEqual(len(transactions), 2)
 
             self.assertEqual(transactions[0].date, datetime.date(2018, 7, 15))
-            self.assertEqual(transactions[0].payee, '000000000')
+            self.assertFalse(transactions[0].payee)
             self.assertEqual(transactions[0].narration,
                              'PayPal Europe S.a.r.l.')
 
-            self.assertEqual(transactions[1].date, datetime.date(2018, 7, 15))
-            self.assertEqual(transactions[1].payee, '111111111')
+            self.assertEqual(transactions[1].date, datetime.date(2018, 8, 15))
+            self.assertFalse(transactions[1].payee)
             self.assertEqual(transactions[1].narration,
                              ('MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED '
                               'Kundenreferenz: '

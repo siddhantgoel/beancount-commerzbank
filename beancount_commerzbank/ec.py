@@ -65,31 +65,33 @@ class ECImporter(importer.ImporterProtocol):
 
         with _change_locale(locale.LC_NUMERIC, self.numeric_locale):
             with open(file_.name, encoding=self.file_encoding) as fd:
-                reader = csv.DictReader(fd, delimiter=';',
-                                        quoting=csv.QUOTE_MINIMAL,
-                                        quotechar='"')
+                reader = csv.DictReader(
+                    fd, delimiter=';', quoting=csv.QUOTE_MINIMAL,
+                    quotechar='"'
+                )
 
                 for index, line in enumerate(reader):
                     meta = data.new_metadata(file_.name, index)
 
                     amount = Amount(
-                        locale.atof(line['Betrag'], Decimal), line['Währung'])
+                        locale.atof(line['Betrag'], Decimal), line['Währung']
+                    )
                     date = datetime.strptime(
-                        line['Buchungstag'], '%d.%m.%Y').date()
+                        line['Buchungstag'], '%d.%m.%Y'
+                    ).date()
                     description = line['Buchungstext']
-                    payee = line['Auftraggeberkonto']
+                    payee = None
 
                     postings = [
-                        data.Posting(self.account, amount, None, None,
-                                     None, None)
+                        data.Posting(
+                            self.account, amount, None, None, None, None
+                        )
                     ]
 
                     entries.append(
                         data.Transaction(
-                            meta, date, self.FLAG,
-                            payee,
-                            description, data.EMPTY_SET, data.EMPTY_SET,
-                            postings
+                            meta, date, self.FLAG, payee, description,
+                            data.EMPTY_SET, data.EMPTY_SET, postings
                         )
                     )
 
