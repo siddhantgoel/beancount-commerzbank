@@ -53,7 +53,12 @@ class ECImporter(importer.ImporterProtocol):
 
     def identify(self, file_):
         with open(file_.name, encoding=self.file_encoding) as fd:
-            line = fd.readline().strip().strip(codecs.BOM_UTF8.decode('utf-8'))
+            try:
+                line = fd.readline().strip().strip(
+                    codecs.BOM_UTF8.decode('utf-8')
+                )
+            except UnicodeDecodeError:
+                return False
 
             if not line:
                 return False
