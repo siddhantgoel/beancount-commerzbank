@@ -36,9 +36,14 @@ class ECImporterTestCase(TestCase):
         importer = ECImporter(self.iban, 'Assets:Commerzbank:EC')
 
         with open(self.filename, 'wb') as fd:
-            fd.write(_format('''
-                {header}
-            ''', dict(header=HEADER)))
+            fd.write(
+                _format(
+                    '''
+                    {header}
+                    ''',
+                    dict(header=HEADER),
+                )
+            )
 
         with open(self.filename) as fd:
             self.assertTrue(importer.identify(fd))
@@ -47,9 +52,14 @@ class ECImporterTestCase(TestCase):
         importer = ECImporter(self.iban, 'Assets:Commerzbank:EC')
 
         with open(self.filename, 'wb') as fd:
-            fd.write(_format('''
-                lolno
-            ''', {}))
+            fd.write(
+                _format(
+                    '''
+                    lolno
+                    ''',
+                    {},
+                )
+            )
 
         with open(self.filename) as fd:
             self.assertFalse(importer.identify(fd))
@@ -58,9 +68,14 @@ class ECImporterTestCase(TestCase):
         importer = ECImporter(self.iban, 'Assets:Commerzbank:EC')
 
         with open(self.filename, 'wb') as fd:
-            fd.write(_format('''
-                {header}
-            ''', dict(header=HEADER)))
+            fd.write(
+                _format(
+                    '''
+                    {header}
+                    ''',
+                    dict(header=HEADER),
+                )
+            )
 
         with open(self.filename) as fd:
             self.assertFalse(importer.extract(fd))
@@ -69,12 +84,17 @@ class ECImporterTestCase(TestCase):
         importer = ECImporter(self.iban, 'Assets:Commerzbank:EC')
 
         with open(self.filename, 'wb') as fd:
-            fd.write(_format('''
-                {header}
+            fd.write(
+                _format(
+                    '''
+                    {header}
 
-                15.07.2018;15.07.2018;Lastschrift;"PayPal Europe S.a.r.l.";-13,47;EUR;000000000;00000000;DE00000000000000000000;Unkategorisierte Ausgaben
-                15.08.2018;15.08.2018;Gutschrift;"MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED Kundenreferenz: XXXX0000000000000000000000000000000";50,00;EUR;111111111;11111111;DE11111111111111111111;Unkategorisierte Ausgaben
-            ''', dict(header=HEADER)))  # NOQA
+                    15.07.2018;15.07.2018;Lastschrift;"PayPal Europe S.a.r.l.";-13,47;EUR;000000000;00000000;DE00000000000000000000;Unkategorisierte Ausgaben
+                    15.08.2018;15.08.2018;Gutschrift;"MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED Kundenreferenz: XXXX0000000000000000000000000000000";50,00;EUR;111111111;11111111;DE11111111111111111111;Unkategorisierte Ausgaben
+                    ''',  # NOQA
+                    dict(header=HEADER),
+                )
+            )
 
         with open(self.filename) as fd:
             transactions = importer.extract(fd)
@@ -83,12 +103,17 @@ class ECImporterTestCase(TestCase):
 
             self.assertEqual(transactions[0].date, datetime.date(2018, 7, 15))
             self.assertFalse(transactions[0].payee)
-            self.assertEqual(transactions[0].narration,
-                             'PayPal Europe S.a.r.l.')
+            self.assertEqual(
+                transactions[0].narration, 'PayPal Europe S.a.r.l.'
+            )
 
             self.assertEqual(transactions[1].date, datetime.date(2018, 8, 15))
             self.assertFalse(transactions[1].payee)
-            self.assertEqual(transactions[1].narration,
-                             ('MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED '
-                              'Kundenreferenz: '
-                              'XXXX0000000000000000000000000000000'))
+            self.assertEqual(
+                transactions[1].narration,
+                (
+                    'MAX MUSTERMANN End-to-End-Ref.: NOTPROVIDED '
+                    'Kundenreferenz: '
+                    'XXXX0000000000000000000000000000000'
+                ),
+            )
