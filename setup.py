@@ -54,7 +54,7 @@ class PublishCommand(Command):
 
 setup(
     name='beancount-commerzbank',
-    version='0.1.2',
+    version='0.1.3',
     description='Beancount Importer for Commerzbank CSV exports',
     long_description=long_description,
     author='Siddhant Goel',

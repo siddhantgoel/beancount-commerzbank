@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+v0.1.3
+------
+
+- Validate file encoding in :code:`identify()`
+
 v0.1.2
 ------
 
