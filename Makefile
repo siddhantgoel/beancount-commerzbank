@@ -1,13 +1,3 @@
-BLACK_CMD=black
-BLACK_OPTS=--line-length 79 --skip-string-normalization
-
-pip-compile:
-	pip-compile requirements.dev.in > requirements.dev.txt
-
-black:
-	$(BLACK_CMD) $(BLACK_OPTS) beancount_commerzbank/
-	$(BLACK_CMD) $(BLACK_OPTS) tests/
-
 flake8:
 	flake8 beancount_commerzbank/ tests/
 
@@ -16,4 +6,4 @@ py.test:
 
 test: flake8 py.test
 
-.PHONY: pip-compile black
+.PHONY: test
