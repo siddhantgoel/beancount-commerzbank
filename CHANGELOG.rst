@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+v0.2.1
+------
+- Update documentation
+
 v0.2.0
 ------
 - Replace :code:`locale` based parsing of numbers with a simple helper function
