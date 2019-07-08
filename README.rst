@@ -30,8 +30,10 @@ Usage
 
     CONFIG = [
         ECImporter(
-            IBAN_NUMBER, 'Assets:Commerzbank:EC', currency='EUR',
-            numeric_locale='de_DE.UTF-8', file_encoding='utf-8-sig'
+            IBAN_NUMBER,
+            'Assets:Commerzbank:EC',
+            currency='EUR',
+            file_encoding='utf-8-sig',
         ),
     ]
 
