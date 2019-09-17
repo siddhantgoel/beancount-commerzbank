@@ -4,11 +4,11 @@ Beancount Commerzbank Importer
 :code:`beancount-commerzbank` provides an Importer for converting CSV exports of
 Commerzbank_ account summaries to the Beancount_ format.
 
+.. image:: https://github.com/siddhantgoel/beancount-commerzbank/workflows/beancount-commerzbank/badge.svg
+    :target: https://github.com/siddhantgoel/beancount-commerzbank/workflows/beancount-commerzbank/badge.svg
+
 .. image:: https://img.shields.io/pypi/v/beancount-commerzbank.svg
     :target: https://pypi.python.org/pypi/beancount-commerzbank
-
-.. image:: https://travis-ci.org/siddhantgoel/beancount-commerzbank.svg?branch=stable
-    :target: https://travis-ci.org/siddhantgoel/beancount-commerzbank
 
 Installation
 ------------
