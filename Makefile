@@ -1,9 +1,12 @@
-flake8:
-	flake8 beancount_commerzbank/ tests/
+lint-flake8:
+	poetry run flake8 beancount_commerzbank/ tests/
 
-py.test:
-	py.test tests/
+lint-black:
+	poetry run black --check beancount_commerzbank/ tests/
 
-test: flake8 py.test
+lint: lint-black lint-flake8
 
-.PHONY: test
+test-pytest:
+	poetry run py.test tests/
+
+.PHONY: lint test
