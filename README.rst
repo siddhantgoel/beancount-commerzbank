@@ -10,6 +10,9 @@ Commerzbank_ account summaries to the Beancount_ format.
 .. image:: https://img.shields.io/pypi/v/beancount-commerzbank.svg
     :target: https://pypi.python.org/pypi/beancount-commerzbank
 
+.. image:: https://img.shields.io/pypi/pyversions/beancount-commerzbank.svg
+    :target: https://pypi.python.org/pypi/beancount-commerzbank
+
 Installation
 ------------
 
