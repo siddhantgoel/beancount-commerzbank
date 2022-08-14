@@ -2,7 +2,7 @@
 name = "beancount-commerzbank"
 version = "0.2.1"
 description = "Beancount Importer for Commerzbank (DE) CSV exports"
-authors = ["Siddhant Goel <me@sgoel.org>"]
+authors = ["Siddhant Goel <me@sgoel.dev>"]
 license = "MIT"
 classifiers = [
     "Development Status :: 4 - Beta",
