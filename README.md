@@ -1,3 +1,15 @@
+## ⚠️ Looking for maintainers
+
+This project is not being actively maintained.
+
+It might still continue to work. But as I don't have a Commerzbank account
+anymore, I don't know how the updated CSV format looks like and can't adjust
+the Importer classes accordingly.
+
+Drop me an email if you'd like to take ownership.
+
+---
+
 # Beancount Commerzbank Importer
 
 `beancount-commerzbank` provides an Importer for converting CSV exports of
