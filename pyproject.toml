@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3 :: Only",
 ]
-include = ["README.rst", "LICENSE.txt"]
+include = ["README.md", "LICENSE.txt"]
 keywords = ["banking", "beancount", "cli-accounting", "finance"]
 repository = "https://github.com/siddhantgoel/beancount-commerzbank"
 
