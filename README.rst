@@ -24,7 +24,7 @@ Installation
     $ pip install beancount-commerzbank
 
 In case you prefer installing from the Github repository, please note that
-:code:`master` is the development branch so :code:`stable` is what you should be
+:code:`main` is the development branch so :code:`stable` is what you should be
 installing from.
 
 Usage
